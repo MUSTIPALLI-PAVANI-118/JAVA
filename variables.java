@@ -1,15 +1,7 @@
-Basics (Variables, Input/Output)
-
-//Write a Java program to print “Hello World”.
-  public class Hello{
-    public static void main(String[]args){
-      System.out.println("Hello World");
-    }
-  }
 
 //Write a program to read two numbers and print their sum, difference, product, and quotient
 import java.util.Scanner;
-public class Hello{
+public class variables{
   public static void main(String[]args){
     Scanner sc=new Scanner(System.in);
     System.out.println("enter number value num1 ");
