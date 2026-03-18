@@ -1,30 +1,57 @@
-abstract class Payment {
+import java.util.Scanner;
 
-    abstract void pay();
+// Interface defining common behavior
+interface Payment {
+    void processPayment(double amount);
 }
 
-class CreditCard extends Payment {
-
-    void pay() {
-        System.out.println("Payment done using Credit Card");
+// Credit Card Payment
+class CreditCard implements Payment {
+    public void processPayment(double amount) {
+        System.out.println("Processing Credit Card payment of Rs." + amount);
     }
 }
 
-class UPI extends Payment {
-
-    void pay() {
-        System.out.println("Payment done using UPI");
+// UPI Payment
+class UPI implements Payment {
+    public void processPayment(double amount) {
+        System.out.println("Processing UPI payment of Rs." + amount);
     }
 }
 
+// Main Class
 public class PaymentDemo {
-
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        Payment p1 = new CreditCard();
-        Payment p2 = new UPI();
+        System.out.println("Select Payment Mode:");
+        System.out.println("1. Credit Card");
+        System.out.println("2. UPI");
+        System.out.print("Enter choice: ");
+        int choice = sc.nextInt();
 
-        p1.pay();
-        p2.pay();
+        System.out.print("Enter amount: ");
+        double amount = sc.nextDouble();
+
+        Payment payment;  // Interface reference
+
+        // Choosing payment mode
+        switch (choice) {
+            case 1:
+                payment = new CreditCard();
+                break;
+            case 2:
+                payment = new UPI();
+                break;
+            default:
+                System.out.println("Invalid choice!");
+                sc.close();
+                return;
+        }
+
+        // Process payment
+        payment.processPayment(amount);
+
+        sc.close();
     }
 }
