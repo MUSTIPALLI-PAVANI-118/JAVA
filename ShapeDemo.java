@@ -1,23 +1,34 @@
-class Shape {
-    void area() {
-        System.out.println("Area calculation");
-    }
+import java.util.Scanner;
+
+interface Shape {
+    double area();
 }
 
-class Rectangle extends Shape {
-    int length = 10;
-    int breadth = 5;
+class Circle implements Shape {
+    double radius;
 
-    void findArea() {
-        int area = length * breadth;
-        System.out.println("Area of Rectangle: " + area);
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public double area() {
+        return Math.PI * radius * radius;
     }
 }
 
 public class ShapeDemo {
     public static void main(String[] args) {
-        Rectangle r = new Rectangle();
-        r.area();
-        r.findArea();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter radius of circle (in cm): ");
+        double r = sc.nextDouble();
+
+        Shape obj = new Circle(r);
+
+        double result = obj.area();
+
+        System.out.println("Area of Circle: " + result + " cm²");
+
+        sc.close();
     }
 }
