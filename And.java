@@ -1,17 +1,13 @@
-import java.util.Scanner;
-public class And{
+public class And {
     public static void main(String[]args){
-        Scanner sc=new Scanner(System.in);
-        System.out.print("enter first number(1 or 0):");
-        int num1=sc.nextInt();
-        System.out.print("enter second number(1 or 0):");
-        int num2=sc.nextInt();
-        if(num1==1 && num2==1){
-            System.out.println("logal and of numbers is 1");
+        int n=100;
+        int x=10;
+        if(n>=100 && ++x>10){
+            System.out.println("& operator is used");
         }
         else{
-            System.out.println("logal and of numbers is 0");
+            System.out.println("operator is not used");
         }
-        sc.close();
+        System.out.println("value of x is "+x);
     }
 }
