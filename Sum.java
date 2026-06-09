@@ -1,12 +1,15 @@
 import java.util.Scanner;
-public class Sum{
+public class Sum {
     public static void main(String[]args){
         Scanner sc=new Scanner(System.in);
-        System.out.println("enter a and b value:");
-        int a =sc.nextInt();
-        int b=sc.nextInt();
-        int sum=a+b;
-        System.out.println("sum of a and b value:"+sum);
+        System.out.println("ENTER THE N VALUE:");
+        int n=sc.nextInt();
+        int count=0;
+        for(int i=1;i<=n;i++){
+            count +=i;
+
+        }
+        System.out.println("SUM OF N NUMBERS IS:"+count);
         sc.close();
     }
 }
