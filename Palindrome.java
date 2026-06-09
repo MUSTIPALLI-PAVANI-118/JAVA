@@ -1,24 +1,23 @@
-//PRINTING palindrome OF A NUMBER
 import java.util.Scanner;
-public class Palindrome{
-  public static void main(String[]args){
-  Scanner sc = new Scanner(System.in);
-  System.out.println("ENTER THE VALUE OF N:");
-  int n = sc.nextInt();
-  int original = n;
-  int reverse=0;
-  while (n > 0){
-    int digit = n%10;
-    reverse = reverse * 10 +digit;
-    n =n/10;
-  }
-  if (original == reverse){
-    System.out.println("ENTERED NUM IS PALINDROME");
-  }else{
-    System.out.println("ENTERED NUM IS NOT A PALINDROME");
-  }
+public class Palindrome {
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("ENTER THE NUMBER:");
+        int num=sc.nextInt();
+        int reverse=0;
+        int original=num;
+        while(num>0){
+            int digit=num%10;
+            reverse=reverse*10+digit;
+            num=num/10;
+        }
+        if(original==reverse){
+            System.out.println("number is a palindrome");
+        }
+        else{
+            System.out.println("number is not a palindrome");   
+        }
 
-    sc.close();
-  }
- 
+        sc.close();
+    }
 }
