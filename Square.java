@@ -1,7 +1,11 @@
 public class Square {
     public static void main(String[]args){
-        for(int i=1;i<=20;i++){
-            System.out.println("square of number "+i+" is "+(i*i));
+        int n=6;
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n;j++){
+                System.out.print("* ");
+            }
+            System.out.println();
         }
-    }    
+    }
 }
