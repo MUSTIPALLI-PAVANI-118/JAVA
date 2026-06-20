@@ -1,37 +1,50 @@
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class KthSmallestElement {
+    private static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
 
-    public static int findKthSmallest(int[] arr, int k) {
-
-        Arrays.sort(arr);
-        return arr[k - 1];
+    private static int partition(int[] arr, int left, int right, Random random) {
+        int pivotIndex = left + random.nextInt(right - left + 1);
+        swap(arr, pivotIndex, right);
+        int pivot = arr[right];
+        int store = left;
+        for (int i = left; i < right; i++) {
+            if (arr[i] <= pivot) {
+                swap(arr, store, i);
+                store++;
+            }
+        }
+        swap(arr, store, right);
+        return store;
     }
 
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter size of array: ");
         int n = sc.nextInt();
-
         int[] arr = new int[n];
-
-        System.out.println("Enter array elements:");
-
-        for (int i = 0; i < n; i++) {
-            System.out.print("Element " + (i + 1) + ": ");
-            arr[i] = sc.nextInt();
-        }
-
-        System.out.print("Enter value of k: ");
+        for (int i = 0; i < n; i++) arr[i] = sc.nextInt();
         int k = sc.nextInt();
 
-        int result = findKthSmallest(arr, k);
-
-        System.out.println("Kth Smallest Element: " + result);
-
-        sc.close();
+        // Quickselect finds kth element without fully sorting.
+        int target = k - 1;
+        int left = 0;
+        int right = n - 1;
+        Random random = new Random(1);
+        while (left <= right) {
+            int pivot = partition(arr, left, right, random);
+            if (pivot == target) {
+                System.out.println(arr[pivot]);
+                return;
+            } else if (pivot < target) {
+                left = pivot + 1;
+            } else {
+                right = pivot - 1;
+            }
+        }
     }
 }
+
