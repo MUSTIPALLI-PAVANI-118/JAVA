@@ -1,52 +1,30 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class ProductArrayExceptSelf {
-
-    public static long[] productExceptSelf(int[] arr) {
-
-        int n = arr.length;
-        long[] res = new long[n];
-
-        res[0] = 1;
-
-        for (int i = 1; i < n; i++) {
-            res[i] = res[i - 1] * arr[i - 1];
-        }
-
-        long right = 1;
-
-        for (int i = n - 1; i >= 0; i--) {
-            res[i] = res[i] * right;
-            right *= arr[i];
-        }
-
-        return res;
-    }
-
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter size of array: ");
         int n = sc.nextInt();
+        long[] arr = new long[n];
+        for (int i = 0; i < n; i++) arr[i] = sc.nextLong();
 
-        int[] arr = new int[n];
-
-        System.out.println("Enter array elements:");
-
+        // Store prefix products, then multiply by suffix products.
+        long[] result = new long[n];
+        long prefix = 1;
         for (int i = 0; i < n; i++) {
-            System.out.print("Element " + (i + 1) + ": ");
-            arr[i] = sc.nextInt();
+            result[i] = prefix;
+            prefix *= arr[i];
+        }
+        long suffix = 1;
+        for (int i = n - 1; i >= 0; i--) {
+            result[i] *= suffix;
+            suffix *= arr[i];
         }
 
-        long[] result = productExceptSelf(arr);
-
-        System.out.print("Product Array: ");
-
-        for (long val : result) {
-            System.out.print(val + " ");
+        // Print product array.
+        for (int i = 0; i < n; i++) {
+            if (i > 0) System.out.print(" ");
+            System.out.print(result[i]);
         }
-
-        sc.close();
     }
 }
+
