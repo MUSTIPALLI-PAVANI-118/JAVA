@@ -1,11 +1,10 @@
+import java.util.Scanner;
 public class Number {
     public static void main(String[]args){
-        int n=6;
-        for(int i=1;i<=n;i++){
-            for(int j=1;j<=n;j++){
-                System.out.print(j+" ");
-            }
-            System.out.println();
-        }
+        Scanner sc=new Scanner(System.in);
+        System.out.println("ENTER THE NUMBER IS:");
+        int num=sc.nextInt();
+        System.out.println("NUMBER IS "+num);
+        sc.close();
     }
 }
