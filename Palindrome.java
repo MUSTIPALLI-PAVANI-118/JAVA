@@ -3,21 +3,19 @@ public class Palindrome {
     public static void main(String[]args){
         Scanner sc=new Scanner(System.in);
         System.out.println("ENTER THE NUMBER:");
-        int num=sc.nextInt();
+        int n=sc.nextInt();
+        int original=n;
         int reverse=0;
-        int original=num;
-        while(num>0){
-            int digit=num%10;
+        while(n>0){
+            int digit=n%10;
             reverse=reverse*10+digit;
-            num=num/10;
+            n=n/10;
         }
-        if(original==reverse){
-            System.out.println("number is a palindrome");
+        if(reverse==original){
+            System.out.println("palindrome");
+        }else{
+            System.out.println("not a palindrome");
         }
-        else{
-            System.out.println("number is not a palindrome");   
-        }
-
         sc.close();
     }
 }
