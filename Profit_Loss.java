@@ -2,19 +2,17 @@ import java.util.Scanner;
 public class Profit_Loss {
     public static void main(String[]args){
         Scanner sc=new Scanner(System.in);
-        System.out.println("ENTER INVESTED AMOUNT:");
-        double invested_amount=sc.nextDouble();
-        System.out.println("ENTER output AMOUNT:");
-        double output_amount=sc.nextDouble();
-        if(output_amount>invested_amount){
-            System.out.println("PROFIT");
-        }
-        else if(output_amount<invested_amount){
+        System.out.println("enter the cost price:");
+        double cp=sc.nextDouble();
+        System.out.println("enter the selling price:");
+        double sp=sc.nextDouble();
+        if(sp>cp){
+            System.out.println("profit");
+        }else if(sp<cp){
             System.out.println("loss");
         }else{
-            System.out.println("no profit no loss");
+            System.out.println("no profit or no loss");
         }
         sc.close();
-
     }
 }
