@@ -1,14 +1,6 @@
-package student;
-
 public class Student {
-    String name;
-
-    public void setStudent(String name) {
-        this.name = name;
-    }
-
-    public void displayStudent() {
-        System.out.println("Student Name: " + name);
+    public static void main(String[]args){
+        String name="pavani";
+        System.out.printf("NAME IS %s",name);
     }
 }
-
