@@ -2,16 +2,14 @@ import java.util.Scanner;
 public class Swap {
     public static void main(String[]args){
         Scanner sc=new Scanner(System.in);
-        System.out.println("ENTER FIRST NUMBER:");
+        System.out.println("enter 1st number:");
         int a=sc.nextInt();
-        System.out.println("ENTER SECOND NUMBER:");
+        System.out.println("enter 2nd number:");
         int b=sc.nextInt();
         a=a+b;
         b=a-b;
         a=a-b;
-
-        System.out.println("numbers after swapping are "+a +" and "+b );
+        System.out.println("swapped numbers are "+a+" and "+b);
         sc.close();
     }
-    
 }
