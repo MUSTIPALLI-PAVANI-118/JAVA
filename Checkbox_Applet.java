@@ -2,7 +2,7 @@ import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.*;
 
-public class CheckboxApplet extends Applet implements ItemListener {
+public class Checkbox_Applet extends Applet implements ItemListener {
     Checkbox male, female;
     String msg = "";
 
