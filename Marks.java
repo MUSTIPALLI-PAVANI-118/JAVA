@@ -1,10 +1,14 @@
-public class Marks {
+import java.util.Scanner;
+public class Marks{
     public static void main(String[]args){
-        int num1=98;
-        int num2=99;
-        int num3=78;
-        double marks=(num1+num2+num3)/300.0;
-        double percentage=marks*100;
-        System.out.printf("PERECENTAGE IS %f",percentage);
+        Scanner sc=new Scanner(System.in);
+        System.out.println("ENTER THE MARKS:");
+        int marks=sc.nextInt();
+        if(marks>=35){
+            System.out.println("PASS");
+        }else{
+            System.out.println("FAIL");
+        }
+        sc.close();
     }
 }
