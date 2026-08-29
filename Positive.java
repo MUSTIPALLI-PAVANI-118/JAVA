@@ -2,20 +2,16 @@ import java.util.Scanner;
 public class Positive{
     public static void main(String[]args){
         Scanner sc=new Scanner(System.in);
-        System.out.println("ENTER ARRAY SIZE:");
+        System.out.println("ENTER THE NUMBER:");
         int n=sc.nextInt();
-        int []arr=new int[n];
-        int count=0;
-        System.out.println("ENTER ARRAY ELEMENTS:");
-        for(int i=0;i<n;i++){
-            arr[i]=sc.nextInt();
+        if(n>0){
+            System.out.println("number is positive");
+        }else if(n<0){
+            System.out.println("number is negative");
         }
-        for(int i=0;i<n;i++){
-            if(arr[i]>0){
-                count+=arr[i];
-            }
+        else{
+            System.out.println("number is zero");
         }
-        System.out.println("SUM OF POSITIVE ARRAY ELEMENTS IS:"+count);
         sc.close();
     }
 }
