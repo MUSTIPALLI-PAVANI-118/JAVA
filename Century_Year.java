@@ -2,16 +2,15 @@ import java.util.Scanner;
 public class Century_Year {
     public static void main(String[]args){
         Scanner sc=new Scanner(System.in);
-        System.out.println("ENTER THE YEAR");
+        System.out.println("ENTER A YEAR:");
         int year=sc.nextInt();
         if(year%100==0){
-            System.out.println("century year");
+            System.out.println("CENTURY YEAR");
         }
         else{
-            System.out.println("not a century year");
+            System.out.println("NOT AN CENTURY YEAR");
+            
         }
         sc.close();
-
     }
-    
 }
