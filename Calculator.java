@@ -1,45 +1,38 @@
 import java.util.Scanner;
-
 public class Calculator {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter first number: ");
-        double num1 = sc.nextDouble();
-
-        System.out.print("Enter operator (+, -, *, /): ");
-        char operator = sc.next().charAt(0);
-
-        System.out.print("Enter second number: ");
-        double num2 = sc.nextDouble();
-
-        double result;
-
-        switch (operator) {
-            case '+':
-                result = num1 + num2;
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter a choice:");
+        System.out.println("1.addition");
+        System.out.println("2.subtraction");
+        System.out.println("3.multiplication");
+        System.out.println("4.division");
+        int choice=sc.nextInt();
+        System.out.println("ENTER 1ST NUMBER:");
+        double a=sc.nextDouble();
+        System.out.println("ENTER 2ND NUMBER:");
+        double b=sc.nextDouble();
+        switch(choice){
+            case 1:
+                System.out.println("ADDITION OF NUMBERS:"+(a+b));
                 break;
-            case '-':
-                result = num1 - num2;
+            case 2:
+                System.out.println("SUBTRACTION OF NUMBERS:"+(a-b));
                 break;
-            case '*':
-                result = num1 * num2;
+            case 3:
+                System.out.println("MULTIPLICATION OF NUMBERS:"+(a*b));
                 break;
-            case '/':
-                if (num2 == 0) {
-                    System.out.println("Error: Division by zero is not allowed.");
-                    sc.close();
-                    return;
+            case 4:
+                if(b!=0){
+                    System.out.println("DIVISION OF NUMBERS:"+(a/b));
                 }
-                result = num1 / num2;
+                else{
+                    System.out.println("INVALID CHOICE");
+                }
                 break;
             default:
-                System.out.println("Error: Invalid operator.");
-                sc.close();
-                return;
+                System.out.println("INVALID CHOICE");
         }
-
-        System.out.println("Result: " + result);
         sc.close();
     }
 }
