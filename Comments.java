@@ -1,16 +1,9 @@
-Java Comments 
-Purpose:
-Improve readability
-Documentation
-Ignored by compiler
-Types:
-Single-line
-// comment
+public class Comments {
+    public static void main(String[]args){
+        // THIS IS A SINGLE COMMENTS
 
-Multi-line
-/* comment */
-
-Documentation
-/**
- * Generates documentation
- */
+        /* THIS IS A MULTI LINE
+        COMMENT */
+        System.out.println("welcome to java learning");
+    }
+}
